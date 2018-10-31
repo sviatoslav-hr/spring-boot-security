@@ -16,7 +16,6 @@ public class Contact {
     private String name;
     private String surname;
     private String phone;
-    private String avatar;
 
     public Contact(String name, String surname, String phone) {
         this.name = name;

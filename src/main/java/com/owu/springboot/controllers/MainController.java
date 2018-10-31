@@ -32,16 +32,8 @@ public class MainController {
 
     @PostMapping("/save")
     public String save(
-        Contact contact,
-        @RequestParam MultipartFile image
-    ) throws IOException {
-        String path = System.getProperty("user.home")+
-                File.separator+
-                "images"+
-                File.separator+
-                image.getOriginalFilename();
-        image.transferTo(new File(path));
-        contact.setAvatar(image.getOriginalFilename());
+        Contact contact
+    ) {
         System.out.println(contact);
         contactDAO.save(contact);
         System.out.println(contact);

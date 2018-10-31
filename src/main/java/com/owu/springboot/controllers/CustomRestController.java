@@ -33,14 +33,8 @@ public class CustomRestController {
             @RequestParam MultipartFile image
                          ) throws IOException {
         Contact contact = new Contact(name, surname, phone);
-        contact.setAvatar(image.getOriginalFilename());
 
-        String path = System.getProperty("user.home")+
-                File.separator+
-                "images"+
-                File.separator+
-                image.getOriginalFilename();
-        image.transferTo(new File(path));
+
         System.out.println(contact);
         contactDAO.save(contact);
         System.out.println(contact);
