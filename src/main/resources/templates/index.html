@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>spring-boot</title>
+    <meta charset="UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+<hr>
+<form th:action="@{/saveUser}" method="post">
+    <input type="" name="user" placeholder="user">
+    <input type="" name="password" placeholder="password">
+    <input type="submit" value="go!">
+</form>
+<h2>[[${message}]]</h2>
+
+<form action="/save" method="POST" enctype="multipart/form-data">
+    <input type="" name="name" placeholder="name">
+    <input type="" name="surname" placeholder="surname">
+    <input type="" name="phone" placeholder="phone">
+    <input type="file" name="image" placeholder="image">
+    <input type="submit" name="" placeholder="">
+</form>
+<div><a href="/show-all-contacts">Show all contacts</a></div>
+<div><a href="/products">Products</a></div>
+
+<form id="f1">
+    <input type="" name="name" placeholder="name">
+    <input type="" name="surname" placeholder="surname">
+    <input type="" name="phone" placeholder="phone">
+    <input type="file" name="image" placeholder="image">
+    <button id="btn">go!</button>
+</form>
+
+<script>
+    $("#btn").click(function (event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: '/upload',
+            type: 'POST',
+            data: new FormData($("#f1")[0]),
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (response) {
+                console.log("ok");
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    });
+</script>
+
+<!--ajax without miltipart-->
+<!--<div>
+    <input type="" id="name" placeholder="name">
+    <input type="" id="surname" placeholder="surname">
+    <input type="" id="phone" placeholder="phone">
+    <button id="save-button">save</button>
+</div>
+
+<div id="representer"></div>
+&lt;!&ndash;<script src="main.js"></script>&ndash;&gt;
+<script>
+    $("#save-button").click(function () {
+        let name = $("#name").val();
+        let surname = $("#surname").val();
+        let phone = $("#phone").val();
+        $("#representer").empty();
+        console.log(name, surname, phone);
+        $.ajax({
+            url: '/save-ajax',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({name, surname, phone}),
+            success: function (response) {
+                console.log(response);
+
+                for (const singleContact of response) {
+                    let $div = $("<div/>", {
+                        text: singleContact.id + " " +
+                            singleContact.name + " " +
+                            singleContact.surname + " " +
+                            singleContact.phone,
+                    });
+                   $("#representer").append($div)
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    })
+</script>-->
+</body>
+</html>

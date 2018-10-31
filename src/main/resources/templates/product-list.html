@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Product list</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="styles/product.css">
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li><a href="/show-products-all"  class="btn-sandy">Показати всі товари</a></li>
+        <li><a href="/show-products-by-price-greater-than-1000" class="btn-sandy">Товари дорожчі 1000</a></li>
+        <li><a href="/show-products-by-price-greater-than-2000" class="btn-sandy">Товари дорожчі 2000</a></li>
+        <li><a href="/show-products-last-10" class="btn-sandy">Останні 10 добавлених товарів</a></li>
+        <li><a href="/show-products-sorted-by-alph" class="btn-sandy">Сортувати по алфавіту</a></li>
+    </ul>
+</div>
+
+
+<div class="menu" th:each="product : ${products}">
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span th:text="${product.id}"></span></p>
+            <p>Name: <span th:text="${product.name}"></span></p>
+            <p>Price: <span th:text="${product.price}"></span> UAH</p>
+            <div><a href="#" class="details-btn">details</a></div>
+        </div>
+    </div>
+</div>
+<div class="back">
+    <p>
+        <a href="/products" class="btn-sandy">back</a>
+    </p>
+</div>
+</body>
+</html>

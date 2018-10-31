@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+
+    <style>
+        /*style reset*/
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, font, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+        }
+        /* set padding as part of total width */
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /* custom */
+
+        body {
+            font-family: Arial;
+        }
+
+        /* header */
+        .header {
+            width: 100%;
+            background: bisque;
+            text-align: center;
+        }
+
+        .header ul {
+            margin-left: 20px;
+        }
+
+        .header li {
+            display: inline-block;
+            margin: 10px 1px;
+        }
+        .btn-sandy{
+            text-decoration: none;
+            color: grey;
+            background: bisque;
+            padding: 5px;
+            border: 2px solid sandybrown;
+        }
+        .btn-sandy:hover {
+            color: white;
+            background-color: sandybrown;
+        }
+
+        /* main */
+        .menu {
+            background-color: red;
+        }
+
+        .item-block {
+            background: bisque;
+            width: 200px;
+            height: 300px;
+            border: 1px solid sandybrown;
+            border-radius: 5px;
+            padding: 5px;
+            float: left;
+            margin: 5px 0px 5px 5px;
+            /*position: relative;*/
+        }
+
+        .item-image {
+            background: lightgrey;
+            width: 188px;
+            height: 188px;
+            position: relative;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .details-btn {
+            color: white;
+            background: sandybrown;
+            border: 2px solid sandybrown;
+            text-decoration: none;
+            padding: 5px 20px;
+            position: relative;
+            top: 10px;
+
+
+        }
+        .details-btn:hover {
+            color: grey;
+        }
+        .details-btn:active {
+            background: #f4bc8b;
+            border: 2px solid #f4bc8b;
+        }
+
+
+        /* bottom */
+        .back {
+            background: bisque;
+            width: 100%;
+            text-align: left;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li><a href="#" class="btn-sandy">Показати всі товари</a></li>
+        <li><a href="#" class="btn-sandy">Товари дорожчі 1000</a></li>
+        <li><a href="#" class="btn-sandy">Товари дорожчі 2000</a></li>
+        <li><a href="#" class="btn-sandy">Останні 10 добавлених товарів</a></li>
+        <li><a href="#" class="btn-sandy">Сортувати по алфавіту</a></li>
+    </ul>
+</div>
+
+
+
+<div class="menu">
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div><a href="#" class="details-btn">details</a></div>
+        </div>
+    </div>
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div class="details">details</div>
+        </div>
+    </div>
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div class="details">details</div>
+        </div>
+    </div>
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div class="details">details</div>
+        </div>
+    </div>
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div class="details">details</div>
+        </div>
+    </div>
+    <div class="item-block">
+        <div class="item-image"></div>
+        <div class="item-data">
+            <p>ID: <span>1</span></p>
+            <p>Name: <span>Litr</span></p>
+            <p>Price: <span>100$</span></p>
+            <div class="details">details</div>
+        </div>
+    </div>
+</div>
+<div class="back">
+    <p>
+        <a href="/products" class="btn-sandy">back</a>
+    </p>
+</div>
+</body>
+</html>

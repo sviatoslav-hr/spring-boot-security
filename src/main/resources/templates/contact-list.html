@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Contact list</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<!--[[${contacts}]]-->
+<ul>
+    <li th:each="contact : ${contacts}">
+        <td th:text="${contact.name}">...</td>
+        <td th:text="${contact.surname}">...</td>
+        <div>
+            <a th:href="@{'contact-details/' + ${contact.id}}">
+                <button>details</button>
+            </a>
+        </div>
+        <div>
+            <img th:src="@{'/ava/' + ${contact.avatar}}" alt="" width="100px">
+        </div>
+    </li>
+</ul>
+<div><a href="/">back</a></div>
+</body>
+</html>
